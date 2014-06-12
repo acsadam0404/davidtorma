@@ -1,15 +1,12 @@
 require 'sinatra'
 
 get '/' do
-   greeting = "He l, World!"
-    erb :index, :locals => {:greeting => greeting} 
+   pics = Dir.entries(File.dirname(__FILE__) + "/public/images/thumbs").select {|f| !File.directory? f}
+    erb :index, :locals => {:pics => pics} 
 end
 
-get '/hello' do
-	erb :hello_form
-end
-
-post '/hello' do
-	greeting = "#{params[:greet] || "Hello"}, #{params[:name] || "Nobody"}"
-	erb :index, :locals => {:greeting => greeting} 
+post '/contact' do
+	contact =  params[:contact]
+	puts contact['name']
+	redirect '/#/contact'
 end
