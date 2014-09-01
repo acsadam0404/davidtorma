@@ -1,29 +1,10 @@
-# .
+git clone https://github.com/acsadam0404/davidtorma/
 
-TODO: Write a gem description
+ruby 1.9 install (https://www.ruby-lang.org/en/downloads/)
+rubygems install (https://rubygems.org/)
 
-## Installation
+parancssorban: 
+- gems install sinatra
+- gems install i18n
 
-Add this line to your application's Gemfile:
-
-    gem '.'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install .
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/./fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+ruby lib\index.rb -vel indul
