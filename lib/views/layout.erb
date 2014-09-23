@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title><%= @title %></title>
+  <meta charset="utf-8" />
+
+  <meta name="author" content="Ács Ádám" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+<header>
+  <div class="navbar navbar-default navbar-static-top navbar-align-center">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"> </span> 
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+
+        <img src="images/logo_nagy.png" />
+      </div>
+      <div class="navbar-collapse collapse">  
+        <ul class="nav navbar-nav navbar-right">
+          <li class="menu"><a href="/">HOME</a></li>
+          <li class="menu"><a href="photo">PHOTO</a></li>
+          <li class="menu"><a href="retouch">RETOUCH</a></li>
+          <li class="menu"><a href="about">ABOUT</a></li>
+          <li class="menu"><a href="contact">CONTACT</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" /></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" ></script>
+</header>
+<div id="content" class="content">
+ <%= yield %>
+</div>
+<footer>
+  <div class= "navbar navbar-default navbar-fixed-bottom">
+
+    <div class="container">
+      <a href="http://google.hu/"  class="pull-left">
+        <img src="images/footer/v1/gb.png" onmouseout="this.src='images/footer/v1/gb.png';" onmouseover="this.src='images/footer/v1/ga.png';" >
+      </a>
+         <a href="http://facebook.hu/" class="pull-left">
+        <img src="images/footer/v1/fb.png" onmouseout="this.src='images/footer/v1/fb.png';" onmouseover="this.src='images/footer/v1/fa.png';" >
+      </a>
+         <a href="http://500px.com/" class="pull-left">
+        <img src="images/footer/v1/5b.png" onmouseout="this.src='images/footer/v1/5b.png';" onmouseover="this.src='images/footer/v1/5a.png';" >
+      </a>
+
+      <div class="pull-left">
+          <p>email: davidraifort@gmail.com</p>
+          <p>Phone: 0620/580-5082</p>
+      </div>
+
+    </div>
+  </footer>
+</body>
+
+  </html>

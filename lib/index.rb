@@ -10,8 +10,20 @@ configure do
 end
 
 get '/' do
+    @title = "Davidraifort - Kezdőoldal"
+    erb :index
+end
+
+get '/photo' do
     pics = Dir.entries(File.dirname(__FILE__) + "/public/images/thumbs").select {|f| !File.directory? f}
-    erb :index, :locals => {:pics => pics} 
+    @title = "Davidraifort - Fotók"
+    erb :photo, :locals => {:pics => pics} 
+end
+
+
+get '/contact' do 
+	@title = "Davidraifort - Kapcsolat"
+	erb :contact
 end
 
 post '/contact' do
