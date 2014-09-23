@@ -15,9 +15,17 @@ get '/' do
 end
 
 get '/photo' do
-    pics = Dir.entries(File.dirname(__FILE__) + "/public/images/thumbs").select {|f| !File.directory? f}
+  photos = Hash.new
+    dirname = File.dirname(__FILE__) + "/public/images/photo"
+    categories = Dir.entries(dirname).select {|f| File.directory? File.join(dirname, f) and !(f =='.' || f == '..') }
+    puts categories
+    for cat in categories do
+      pics = Dir.entries(dirname + "/" +  cat).select {|f| !File.directory? f}
+      photos[cat] = pics
+    end
+    puts photos
     @title = "Davidraifort - Fotók"
-    erb :photo, :locals => {:pics => pics} 
+    erb :photo, :locals => {:photos => photos} 
 end
 
 

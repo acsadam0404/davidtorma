@@ -1,21 +1,26 @@
 <ul class="submenu">
-	<li><div class="filter" data-filter="all">Show All</div></li>
-	<li><div class="filter" data-filter=".category-colorcorrection">Color correction</div></li>
-	<li><div class="filter" data-filter=".category-retouch">Retouching</div></li>
-	<li><div class="filter" data-filter=".category-imagemanipulation">Image manipulation</div></li>
+<li><div class="filter" data-filter="all">Show All</div></li>
+<% photos.each do |key, pics| %>
+<li><div class="filter" data-filter=".category-<%=key%>"><%=key%></div></li>
+<% end %>
 </ul>
 
 <div id="container">
-	<div class="mix category-colorcorrection">23423</div>
-	<div class="mix category-retouch">asdfsd</div>
-	<div class="mix category-imagemanipulation">hfg</div>
-	<div class="mix category-imagemanipulation">4343</div>
+    <% photos.each do |key, pics|
+    	pics.each do |p| %>
+
+     <div class="mix category-<%=key%>"><img src="images/photo/<%=key%>/<%=p%>" data-large="images/photo/<%=key%>/big_<%=p%>" alt="image01" /></div>
+                
+              <% 
+          end
+       end %>
 </div>
 
 <style>
 #container .mix{
 	display: none;
 }
+.mix img:hover { height: 500px; width: auto; }
 </style>
 
 <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
